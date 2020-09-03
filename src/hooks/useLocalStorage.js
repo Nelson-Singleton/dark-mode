@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 function useLocalStorage(key, initialValue){
-
+//places a key/value in local storage that can used for conditional logic
     const [storedValue, setStoredValue] = useState(() => {
         const item = window.localStorage.getItem(key);
         return item ? JSON.parse(item) : initialValue;
@@ -14,7 +14,7 @@ function useLocalStorage(key, initialValue){
         window.localStorage.setItem(key, JSON.stringify(value));
     }
 
-    return [storedValue];
+    return [storedValue, setValue];
 }
 
 export default useLocalStorage

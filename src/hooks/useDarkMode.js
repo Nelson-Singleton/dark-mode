@@ -1,8 +1,8 @@
 import useLocalStorage from './useLocalStorage'
 
-function useDarkMode() {
-
-    const [darkMode, setDarkMode] = useLocalStorage('dark-mode', "value")
+function useDarkMode(key, value) {
+//sets state to local storage
+    const [darkMode, setDarkMode] = useLocalStorage(key, value)
 
     return [darkMode, setDarkMode]
     
